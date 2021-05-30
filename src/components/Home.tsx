@@ -3,13 +3,13 @@ import productsContext from "../contexts/productsContext"
 
 const Home: React.FunctionComponent<{}> = props => {
 
-    const value = useContext(productsContext)
+    const {data, updateData} = useContext(productsContext)
 
-    value.updateData("text2")
+    // value.updateData("text2")
 
     return (
         <div>
-            HOME {value.data}
+            HOME {JSON.stringify(data[0], null, 2)}
         </div>
     )
 }

@@ -1,0 +1,46 @@
+[
+    {
+        "name": "BATERIA EXPLORER PARA UPS 12V 7AH",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vitae odio vel est elementum gravida. Nunc interdum luctus tellus a feugiat. Duis est risus, posuere at nisi et, sodales imperdiet ipsum. In eleifend tristique diam, a pulvinar urna suscipit sed. Quisque et est dui. Donec vel orci interdum ipsum interdum consectetu",
+        "precio": 19 ,
+        "srcImages": ["bateria-fuli-para-ups-12v-9ah","bateria-fuli-para-ups-12v-9ah-2"] ,
+        "stock": 8
+    },
+    {
+        "name": "TABLET FIRE 7",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vitae odio vel est elementum gravida. Nunc interdum luctus tellus a feugiat. Duis est risus, posuere at nisi et, sodales imperdiet ipsum. In eleifend tristique diam, a pulvinar urna suscipit sed. Quisque et est dui. Donec vel orci interdum ipsum interdum consectetu",
+        "precio": 70 ,
+        "srcImages": ["tablet-fire-7","tablet-fire-7-2", "tablet-fire-7-3"] ,
+        "stock": 4
+    },
+    {
+        "name": "XIAOMI REDMI NOTE 9S",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vitae odio vel est elementum gravida. Nunc interdum luctus tellus a feugiat. Duis est risus, posuere at nisi et, sodales imperdiet ipsum. In eleifend tristique diam, a pulvinar urna suscipit sed. Quisque et est dui. Donec vel orci interdum ipsum interdum consectetu",
+        "precio": 265 ,
+        "srcImages": ["xiaomi-redmi-note-9-s-6-128"] ,
+        "stock": 10
+    },
+    {
+        "name": "XIAOMI REDMI 9C",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vitae odio vel est elementum gravida. Nunc interdum luctus tellus a feugiat. Duis est risus, posuere at nisi et, sodales imperdiet ipsum. In eleifend tristique diam, a pulvinar urna suscipit sed. Quisque et est dui. Donec vel orci interdum ipsum interdum consectetu",
+        "precio": 170 ,
+        "srcImages": ["xiaomi-redmi-9-c"] ,
+        "stock": 7
+    },
+    {
+        "name": "CORNETAS GENIUS 3-WAY HI-FI WOOD SPEAKERS",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vitae odio vel est elementum gravida. Nunc interdum luctus tellus a feugiat. Duis est risus, posuere at nisi et, sodales imperdiet ipsum. In eleifend tristique diam, a pulvinar urna suscipit sed. Quisque et est dui. Donec vel orci interdum ipsum interdum consectetu",
+        "precio": 47 ,
+        "srcImages": ["cornetas-genius-3-way-hi-fi-wood-speakers"] ,
+        "stock": 20
+    },
+    {
+        "name": "CORNETAS GENIUS 3-WAY HI-FI WOOD SPEAKERS",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vitae odio vel est elementum gravida. Nunc interdum luctus tellus a feugiat. Duis est risus, posuere at nisi et, sodales imperdiet ipsum. In eleifend tristique diam, a pulvinar urna suscipit sed. Quisque et est dui. Donec vel orci interdum ipsum interdum consectetu",
+        "precio": 55 ,
+        "srcImages": ["teclado-genius-scorpion-k220"] ,
+        "stock": 34
+    }
+
+
+]

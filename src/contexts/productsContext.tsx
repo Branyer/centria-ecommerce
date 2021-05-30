@@ -1,5 +1,6 @@
 import {createContext, ReactNode, useState} from "react"
 
+import products from "./products.json"
 
 const ProductsContext = createContext({data : {}, updateData: (newData) => {} })
 
@@ -12,7 +13,7 @@ type Props = {
 
 export function ProductsContextProvider({children}: Props) {
 
-    const [data, setData] = useState("text")
+    const [data, setData] = useState(products)
 
     function updateData (newData) {
 
