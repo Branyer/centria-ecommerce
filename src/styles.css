@@ -1,0 +1,10 @@
+.p-menubar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.p-menubar-end {
+    margin: 0 !important
+}
