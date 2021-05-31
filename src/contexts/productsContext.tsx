@@ -2,7 +2,11 @@ import {createContext, ReactNode, useState} from "react"
 
 import products from "./products.json"
 
-const ProductsContext = createContext({data : {}, updateData: (newData) => {} })
+import Product from "../interfaces/product"
+
+let initialData: Product[] = []
+
+const ProductsContext = createContext({data : initialData , updateData: (newData) => {} })
 
 export default ProductsContext
 
