@@ -1,8 +1,9 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useRef } from 'react'
 import productsContext from "../contexts/productsContext"
 import { DataView, DataViewLayoutOptions } from 'primereact/dataview';
 import { Button } from 'primereact/button';
 import styled from 'styled-components';
+import { Toast } from 'primereact/toast';
 
 const GridItem = styled.div`
     
@@ -62,9 +63,29 @@ const DataViewContainer = styled.div`
 
 const Home: React.FunctionComponent<{}> = props => {
 
-    const {data, updateData} = useContext(productsContext)
+    const {data:{products, shoppingCart}, updateShoppingCart} = useContext(productsContext)
+    const myToast = useRef<Toast|null>(null);
+    function handleAddToShoppingCart(id:string) {
 
-    // value.updateData("text2")
+        let pos:number|null = null
+        let count = 1
+        
+        for(let i = 0; i<shoppingCart.length; i++) {
+
+            if(shoppingCart[i].productId === id) {
+                count = shoppingCart[i].count + 1
+                pos = i
+            }
+
+        }
+
+
+        updateShoppingCart(pos, {productId: id, count})
+        myToast.current?.show({severity: 'success', summary: 'Se ha complatado la accion', detail: 'Se ha añadido un producto al carrito.'});   
+        
+    }
+
+
 
     function renderGridItem(data) {
         return (
@@ -81,7 +102,7 @@ const Home: React.FunctionComponent<{}> = props => {
                     </div>
                     <div className="product-grid-item-bottom">
                         <span className="product-price">${data.precio}</span>
-                        <Button icon="pi pi-shopping-cart" label="Add to Cart" disabled={data.stock === 0}></Button>
+                        <Button icon="pi pi-shopping-cart" label="Add to Cart" disabled={data.stock === 0} onClick={()=> handleAddToShoppingCart(data.id)}></Button>
                     </div>
                 </div>
             </GridItem>
@@ -98,12 +119,12 @@ const Home: React.FunctionComponent<{}> = props => {
 
     return (
         <div className="content-section">
-            
+            <Toast ref={myToast} position="bottom-center"/> 
             <div className="card">
                 <DataViewContainer>
                     <DataView 
                         header={<h1> Productos </h1>} 
-                        value={data} 
+                        value={products} 
                         layout={"grid"} 
                         itemTemplate={itemTemplate} 
                         paginator 

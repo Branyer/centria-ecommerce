@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {  useContext } from 'react';
 import {BrowserRouter as Router, Switch, Route, RouteComponentProps, Link} from "react-router-dom"
 import routes from "./config/routes"
 import "primereact/resources/themes/md-light-deeppurple/theme.css"
@@ -8,7 +8,7 @@ import "./styles.css"
 import { Menubar } from 'primereact/menubar';
 import items from "./config/menu_items";
 import styled from 'styled-components';
-
+import productsContext from "./contexts/productsContext"
 import Logo from "./images/ecommerce-logo.png"
 import {ProductsContextProvider} from "./contexts/productsContext"
 
@@ -28,16 +28,16 @@ const ContainerShoppingCartMenu = styled.div`
 `;
 
 
-const ShoppingCartMenu: React.FunctionComponent<{products: number}> = props => {
+const ShoppingCartMenu: React.FunctionComponent<{}> = props => {
 
-  const {products} = props
+  const {data:{shoppingCart}} = useContext(productsContext)
 
   return (
     <>
         <Link to="/shoppingCart" style={{textDecoration:"none", margin: "0"}}>
             <ContainerShoppingCartMenu>
                 <i className="pi pi-shopping-cart" style={{'fontSize': '2em'}}></i>
-                <p style={{marginLeft: "10px"}}>Carrito ({products})</p> 
+                <p style={{marginLeft: "10px"}}>Carrito ({shoppingCart?.length})</p> 
             </ContainerShoppingCartMenu>
           </Link>
     </>
@@ -64,7 +64,7 @@ const App: React.FunctionComponent<{}> = props => {
     <div>
       <ProductsContextProvider>
         <Router>
-          <Menubar model={items} start={<LogoMenu />} end={<ShoppingCartMenu products={0} />}/>
+          <Menubar model={items} start={<LogoMenu />} end={<ShoppingCartMenu  />}/>
           <Switch>
             {routes.map((route, index) => 
                 <Route 

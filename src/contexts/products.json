@@ -1,5 +1,6 @@
 [
     {
+        "id": "1",
         "name": "BATERIA EXPLORER PARA UPS 12V 7AH",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vitae odio vel est elementum gravida. Nunc interdum luctus tellus a feugiat. Duis est risus, posuere at nisi et, sodales imperdiet ipsum. In eleifend tristique diam, a pulvinar urna suscipit sed. Quisque et est dui. Donec vel orci interdum ipsum interdum consectetu",
         "precio": 19 ,
@@ -7,6 +8,7 @@
         "stock": 8
     },
     {
+        "id": "2",
         "name": "TABLET FIRE 7",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vitae odio vel est elementum gravida. Nunc interdum luctus tellus a feugiat. Duis est risus, posuere at nisi et, sodales imperdiet ipsum. In eleifend tristique diam, a pulvinar urna suscipit sed. Quisque et est dui. Donec vel orci interdum ipsum interdum consectetu",
         "precio": 70 ,
@@ -14,6 +16,7 @@
         "stock": 4
     },
     {
+        "id":"3",
         "name": "XIAOMI REDMI NOTE 9S",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vitae odio vel est elementum gravida. Nunc interdum luctus tellus a feugiat. Duis est risus, posuere at nisi et, sodales imperdiet ipsum. In eleifend tristique diam, a pulvinar urna suscipit sed. Quisque et est dui. Donec vel orci interdum ipsum interdum consectetu",
         "precio": 265 ,
@@ -21,6 +24,7 @@
         "stock": 10
     },
     {
+        "id": "4",
         "name": "XIAOMI REDMI 9C",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vitae odio vel est elementum gravida. Nunc interdum luctus tellus a feugiat. Duis est risus, posuere at nisi et, sodales imperdiet ipsum. In eleifend tristique diam, a pulvinar urna suscipit sed. Quisque et est dui. Donec vel orci interdum ipsum interdum consectetu",
         "precio": 170 ,
@@ -28,6 +32,7 @@
         "stock": 7
     },
     {
+        "id": "5",
         "name": "CORNETAS GENIUS 3-WAY HI-FI WOOD SPEAKERS",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vitae odio vel est elementum gravida. Nunc interdum luctus tellus a feugiat. Duis est risus, posuere at nisi et, sodales imperdiet ipsum. In eleifend tristique diam, a pulvinar urna suscipit sed. Quisque et est dui. Donec vel orci interdum ipsum interdum consectetu",
         "precio": 47 ,
@@ -35,12 +40,11 @@
         "stock": 20
     },
     {
+        "id": "6",
         "name": "CORNETAS GENIUS 3-WAY HI-FI WOOD SPEAKERS",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vitae odio vel est elementum gravida. Nunc interdum luctus tellus a feugiat. Duis est risus, posuere at nisi et, sodales imperdiet ipsum. In eleifend tristique diam, a pulvinar urna suscipit sed. Quisque et est dui. Donec vel orci interdum ipsum interdum consectetu",
         "precio": 55 ,
         "srcImages": ["teclado-genius-scorpion-k220.jpg"] ,
         "stock": 34
     }
-
-
 ]
