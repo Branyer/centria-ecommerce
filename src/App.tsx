@@ -12,7 +12,7 @@ import productsContext from "./contexts/productsContext"
 import Logo from "./images/ecommerce-logo.png"
 import {ProductsContextProvider} from "./contexts/productsContext"
 
-const ContainerShoppingCartMenu = styled.div`
+const ContainerMenuItem = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -21,6 +21,8 @@ const ContainerShoppingCartMenu = styled.div`
   padding: 5px;
   transition: all ease 0.2s;
   min-width: 120px;
+  margin: 0px 10px;
+  color: black;
 
   &:hover {
     transform: scale(0.98)
@@ -35,10 +37,10 @@ const ShoppingCartMenu: React.FunctionComponent<{}> = props => {
   return (
     <>
         <Link to="/shoppingCart" style={{textDecoration:"none", margin: "0"}}>
-            <ContainerShoppingCartMenu>
+            <ContainerMenuItem>
                 <i className="pi pi-shopping-cart" style={{'fontSize': '2em'}}></i>
                 <p style={{marginLeft: "10px"}}>Carrito ({shoppingCart?.length})</p> 
-            </ContainerShoppingCartMenu>
+            </ContainerMenuItem>
           </Link>
     </>
   )
@@ -56,6 +58,20 @@ const LogoMenu: React.FunctionComponent<{}> = props => {
 
  }
 
+ const ShoppingRecord: React.FunctionComponent<{}> = props => {
+
+    return (
+      <Link to="/shoppingRecord" style={{textDecoration:"none"}}>
+          <ContainerMenuItem>
+             <i className="pi pi-fw pi-book"></i> 
+             <p>Registro de Compras</p>
+          </ContainerMenuItem>
+      </Link>
+    )
+
+
+ }
+
 
 const App: React.FunctionComponent<{}> = props => {
 
@@ -64,7 +80,18 @@ const App: React.FunctionComponent<{}> = props => {
     <div>
       <ProductsContextProvider>
         <Router>
-          <Menubar model={items} start={<LogoMenu />} end={<ShoppingCartMenu  />}/>
+          <Menubar 
+            model={[]} 
+            start={<LogoMenu />} 
+            end={
+            <>
+            <div style={{display:"flex", alignItems:"center", color: "black"}}>
+              <ShoppingRecord/>
+              <ShoppingCartMenu  />
+            </div>
+            </>
+            }
+          />
           <Switch>
             {routes.map((route, index) => 
                 <Route 

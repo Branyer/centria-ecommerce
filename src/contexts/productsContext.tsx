@@ -55,12 +55,25 @@ export function ProductsContextProvider({children}: Props) {
     
             })
 
+        } else {
+
+
+            setData((data) => {
+    
+                const newData = {...data}
+                data.shoppingCart.splice(pos, 1 );
+    
+                return newData
+    
+            })
+
+
+
         }
     }
 
     return (
         <ProductsContext.Provider value={{data, updateProduct, updateShoppingCart}}>
-            
             {children}
         </ProductsContext.Provider>
     )
