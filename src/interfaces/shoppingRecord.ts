@@ -5,5 +5,5 @@ export default interface ShoppingRecord {
     lastname: string;
     email: string;
     paymentMethod: string;
-    products: ShoppingCart[]
+    shoppingCart: ShoppingCart[]
 }

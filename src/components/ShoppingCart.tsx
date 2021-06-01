@@ -80,8 +80,6 @@ const ShoppingCart: React.FunctionComponent<{}> = props => {
 
             newShopProducts.push({product, count: shoppingCart[i].count})
 
-
-
         }
 
         setShopProducts(newShopProducts)
