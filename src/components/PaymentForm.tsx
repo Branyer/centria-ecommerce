@@ -60,7 +60,7 @@ const PaymentForm: React.FunctionComponent<{}> = props => {
 
     const [formData, setFormData] = useState<FormData>({name: "", lastname: "", email: "", paymentMethod: ""})
 
-    const {data, updateShoppingCart} = useContext(productsContext)
+    const {data, updateShoppingCart, addShoppingRecord} = useContext(productsContext)
 
     const {products, shoppingCart} = data
 
@@ -86,6 +86,10 @@ const PaymentForm: React.FunctionComponent<{}> = props => {
 
     }, [data])
 
+    if(shoppingCart.length === 0) return <h1>NO HAS AGREGADO NINGUN PRODUCTO AL CARRITO</h1>
+
+
+
     return (
         <div className="content-section">
             <div className="card">
@@ -93,7 +97,7 @@ const PaymentForm: React.FunctionComponent<{}> = props => {
                 <Form 
                 onSubmit={(e) => {
                     e.preventDefault(); 
-                    
+                    addShoppingRecord({...formData, shoppingCart})
                 }}
                 >
                     <h1>FORMULARIO DE PAGO</h1>
@@ -103,11 +107,11 @@ const PaymentForm: React.FunctionComponent<{}> = props => {
                         <label htmlFor="name">Nombre</label>
                      </span>
                      <span className="p-float-label">
-                        <InputText id="lastname" onChange={(e) => setFormData((d) => ({...d, name: e.target.value}))} required />
+                        <InputText id="lastname" onChange={(e) => setFormData((d) => ({...d, lastname: e.target.value}))} required />
                         <label htmlFor="lastname">Apellidos</label>
                      </span>
                      <span className="p-float-label">
-                        <InputText id="email" onChange={(e) => setFormData((d) => ({...d, name: e.target.value}))} required type="email"/>
+                        <InputText id="email" onChange={(e) => setFormData((d) => ({...d, email: e.target.value}))} required type="email"/>
                         <label htmlFor="email">Email</label>
                      </span>
                      <div>
@@ -125,7 +129,6 @@ const PaymentForm: React.FunctionComponent<{}> = props => {
                               </div>
                          </div>
                      </div>
-                    
                         
                         {shopProducts.map((data, i) => {
 

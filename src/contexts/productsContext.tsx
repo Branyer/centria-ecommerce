@@ -6,6 +6,7 @@ import Product from "../interfaces/product"
 import ShoppingCart from "../interfaces/shoppingCart"
 import ShoppingRecord from "../interfaces/shoppingRecord"
 
+
 let initialProducts: Product[] = []
 let initialShoppingCart: ShoppingCart[] = []
 let initialShoppingRecord: ShoppingRecord[] = []
@@ -62,7 +63,7 @@ export function ProductsContextProvider({children}: Props) {
     
             })
 
-        } else {
+        } else if(action === "remove"){
 
 
             setData((data) => {
@@ -73,7 +74,7 @@ export function ProductsContextProvider({children}: Props) {
                 return newData
     
             })
-        }
+        } 
     }
 
     function addShoppingRecord(record) {
@@ -83,6 +84,19 @@ export function ProductsContextProvider({children}: Props) {
             const newData = {...data}
             newData.shoppingRecord.push(record)
 
+            for(let i = 0; i< newData.products.length; i++) {
+
+                for(let k =0 ; k < newData.shoppingCart.length; k++) {
+
+                    if(newData.shoppingCart[k].productId === newData.products[i].id) {
+
+                        newData.products[i].stock -= newData.shoppingCart[k].count
+                        break;
+
+                    }
+                }
+            }
+            newData.shoppingCart = []
             return newData
 
         })
