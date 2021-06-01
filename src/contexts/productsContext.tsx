@@ -4,13 +4,20 @@ import products from "./products.json"
 import GlobalData from "../interfaces/globalData"
 import Product from "../interfaces/product"
 import ShoppingCart from "../interfaces/shoppingCart"
+import ShoppingRecord from "../interfaces/shoppingRecord"
 
 let initialProducts: Product[] = []
 let initialShoppingCart: ShoppingCart[] = []
+let initialShoppingRecord: ShoppingRecord[] = []
 
-let initialData: GlobalData = {  products: initialProducts , shoppingCart: initialShoppingCart}
+let initialData: GlobalData = {  products: initialProducts , shoppingCart: initialShoppingCart, shoppingRecord: initialShoppingRecord}
 
-const ProductsContext = createContext({data : initialData , updateProduct: (pos, product) => {}, updateShoppingCart: (pos, product, action="add") => {} })
+const ProductsContext = createContext({
+    data : initialData , 
+    updateProduct: (pos, product) => {}, 
+    updateShoppingCart: (pos, product, action="add") => {},
+    addShoppingRecord: (record) => {}
+    })
 
 export default ProductsContext
 
@@ -21,7 +28,7 @@ type Props = {
 
 export function ProductsContextProvider({children}: Props) {
 
-    const [data, setData] = useState({products, shoppingCart: initialShoppingCart})
+    const [data, setData] = useState({products, shoppingCart: initialShoppingCart, shoppingRecord:initialShoppingRecord })
 
 
     function updateProduct (pos, product) {
@@ -47,9 +54,9 @@ export function ProductsContextProvider({children}: Props) {
                 const newData = {...data}
                 
                 if(pos === null)
-                    data.shoppingCart.push(product)
+                newData.shoppingCart.push(product)
                 else 
-                    data.shoppingCart[pos] = product
+                newData.shoppingCart[pos] = product
     
                 return newData
     
@@ -61,19 +68,30 @@ export function ProductsContextProvider({children}: Props) {
             setData((data) => {
     
                 const newData = {...data}
-                data.shoppingCart.splice(pos, 1 );
+                newData.shoppingCart.splice(pos, 1 );
     
                 return newData
     
             })
-
-
-
         }
     }
 
+    function addShoppingRecord(record) {
+
+        setData((data) => {
+    
+            const newData = {...data}
+            newData.shoppingRecord.push(record)
+
+            return newData
+
+        })
+
+
+    }
+
     return (
-        <ProductsContext.Provider value={{data, updateProduct, updateShoppingCart}}>
+        <ProductsContext.Provider value={{data, updateProduct, updateShoppingCart, addShoppingRecord}}>
             {children}
         </ProductsContext.Provider>
     )
